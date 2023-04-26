@@ -8,12 +8,50 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var rectColor = Color.gray
+    
+    @State var changeMe = false
+    @State var message = "Message goes here"
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+            TabView {
+                TapAndHoldView()
+                    .tabItem {
+                        Image(systemName: "1.circle")
+                        Text("Tap / Long Hold")
+                    }
+                MagnificationView()
+                    .tabItem {
+                        Image(systemName: "2.circle")
+                        Text("Zoom")
+                    }
+                RotationView()
+                    .tabItem {
+                        Image(systemName: "3.circle")
+                        Text("Spin")
+                    }
+                DragView()
+                    .tabItem {
+                        Image(systemName: "4.circle")
+                        Text("Drag")
+                    }
+            }
+            .tabItem {
+                Image(systemName: "1.square")
+                Text("Basics")
+            }
+            HighPriorityGestureView()
+                .tabItem {
+                    Image(systemName: "2.square")
+                    Text("High Prio")
+                }
+            SimultaneousView()
+                .tabItem {
+                    Image(systemName: "3.square")
+                    Text("Simultaneous")
+                }
+
         }
         .padding()
     }
