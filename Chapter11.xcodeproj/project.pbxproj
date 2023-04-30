@@ -13,6 +13,8 @@
 		E4429F7B29F8B14B00FCC139 /* Drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4429F7A29F8B14B00FCC139 /* Drag.swift */; };
 		E4429F7D29F8B4D000FCC139 /* HIghPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4429F7C29F8B4D000FCC139 /* HIghPriority.swift */; };
 		E4429F7F29F8B6EE00FCC139 /* Simultaneous.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4429F7E29F8B6EE00FCC139 /* Simultaneous.swift */; };
+		E4C02A9729FEC51900B8ACA9 /* Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C02A9629FEC51900B8ACA9 /* Map.swift */; };
+		E4C02A9929FEC94300B8ACA9 /* GettingStarted.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4C02A9829FEC94300B8ACA9 /* GettingStarted.swift */; };
 		E4CE32AC29EF61CC006D353C /* Chapter11App.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE32AB29EF61CC006D353C /* Chapter11App.swift */; };
 		E4CE32AE29EF61CC006D353C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE32AD29EF61CC006D353C /* ContentView.swift */; };
 		E4CE32B029EF61CE006D353C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4CE32AF29EF61CE006D353C /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 		E4429F7A29F8B14B00FCC139 /* Drag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Drag.swift; sourceTree = "<group>"; };
 		E4429F7C29F8B4D000FCC139 /* HIghPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIghPriority.swift; sourceTree = "<group>"; };
 		E4429F7E29F8B6EE00FCC139 /* Simultaneous.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Simultaneous.swift; sourceTree = "<group>"; };
+		E4C02A9629FEC51900B8ACA9 /* Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map.swift; sourceTree = "<group>"; };
+		E4C02A9829FEC94300B8ACA9 /* GettingStarted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingStarted.swift; sourceTree = "<group>"; };
 		E4CE32A829EF61CC006D353C /* Chapter11.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chapter11.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CE32AB29EF61CC006D353C /* Chapter11App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter11App.swift; sourceTree = "<group>"; };
 		E4CE32AD29EF61CC006D353C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -44,6 +48,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E4C02A9529FEC50B00B8ACA9 /* Demos */ = {
+			isa = PBXGroup;
+			children = (
+				E4429F7429F8AD8500FCC139 /* Magnification.swift */,
+				E4429F7629F8ADC500FCC139 /* TapAndHold.swift */,
+				E4429F7829F8B0DE00FCC139 /* Rotation.swift */,
+				E4429F7A29F8B14B00FCC139 /* Drag.swift */,
+				E4429F7C29F8B4D000FCC139 /* HIghPriority.swift */,
+				E4429F7E29F8B6EE00FCC139 /* Simultaneous.swift */,
+			);
+			path = Demos;
+			sourceTree = "<group>";
+		};
 		E4CE329F29EF61CC006D353C = {
 			isa = PBXGroup;
 			children = (
@@ -65,14 +82,11 @@
 			children = (
 				E4CE32AB29EF61CC006D353C /* Chapter11App.swift */,
 				E4CE32AD29EF61CC006D353C /* ContentView.swift */,
+				E4C02A9629FEC51900B8ACA9 /* Map.swift */,
+				E4C02A9829FEC94300B8ACA9 /* GettingStarted.swift */,
 				E4CE32AF29EF61CE006D353C /* Assets.xcassets */,
 				E4CE32B129EF61CE006D353C /* Preview Content */,
-				E4429F7429F8AD8500FCC139 /* Magnification.swift */,
-				E4429F7629F8ADC500FCC139 /* TapAndHold.swift */,
-				E4429F7829F8B0DE00FCC139 /* Rotation.swift */,
-				E4429F7A29F8B14B00FCC139 /* Drag.swift */,
-				E4429F7C29F8B4D000FCC139 /* HIghPriority.swift */,
-				E4429F7E29F8B6EE00FCC139 /* Simultaneous.swift */,
+				E4C02A9529FEC50B00B8ACA9 /* Demos */,
 			);
 			path = Chapter11;
 			sourceTree = "<group>";
@@ -155,6 +169,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4C02A9929FEC94300B8ACA9 /* GettingStarted.swift in Sources */,
 				E4429F7929F8B0DE00FCC139 /* Rotation.swift in Sources */,
 				E4CE32AE29EF61CC006D353C /* ContentView.swift in Sources */,
 				E4CE32AC29EF61CC006D353C /* Chapter11App.swift in Sources */,
@@ -162,6 +177,7 @@
 				E4429F7B29F8B14B00FCC139 /* Drag.swift in Sources */,
 				E4429F7729F8ADC500FCC139 /* TapAndHold.swift in Sources */,
 				E4429F7F29F8B6EE00FCC139 /* Simultaneous.swift in Sources */,
+				E4C02A9729FEC51900B8ACA9 /* Map.swift in Sources */,
 				E4429F7529F8AD8500FCC139 /* Magnification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

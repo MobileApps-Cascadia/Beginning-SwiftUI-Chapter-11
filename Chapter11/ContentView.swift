@@ -51,6 +51,16 @@ struct ContentView: View {
                     Image(systemName: "3.square")
                     Text("Simultaneous")
                 }
+            GettingStartedExerciseView()
+                .tabItem {
+                    Image(systemName: "4.square")
+                    Text("Getting Started")
+                }
+            MapExerciseView()
+                .tabItem {
+                    Image(systemName: "5.square")
+                    Text("Map")
+                }
 
         }
         .padding()
