@@ -13,6 +13,7 @@ struct GettingStartedExerciseView: View {
     @State private var degree = 0.0
     @State private var tempValue: CGFloat = 0
     @State private var finalValue: CGFloat = 1
+    @State private var rectanglePosition = CGPoint(x: 175, y: 100)
     
     var body: some View {
         VStack {
@@ -45,6 +46,7 @@ struct GettingStartedExerciseView: View {
             }
             .rotationEffect(Angle.degrees(degree))
             .scaleEffect(finalValue + tempValue)
+            .position(rectanglePosition)
         }
         .padding()
         
@@ -64,6 +66,10 @@ struct GettingStartedExerciseView: View {
                     degree = angle.degrees
                 })
         )
+        .highPriorityGesture(DragGesture()
+                    .onChanged({ value in
+            rectanglePosition = value.location
+        }))
     }
 }
 
