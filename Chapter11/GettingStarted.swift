@@ -11,6 +11,8 @@ struct GettingStartedExerciseView: View {
     @State var rectColor = Color.gray
     @State var textColor = Color.black
     @State private var degree = 0.0
+    @State private var tempValue: CGFloat = 0
+    @State private var finalValue: CGFloat = 1
     
     var body: some View {
         VStack {
@@ -23,9 +25,8 @@ struct GettingStartedExerciseView: View {
 
                 Text("Tap to change color, hold to go \nback to grey")
                     .foregroundColor(textColor)
-
-                    
-            }.onTapGesture {
+            }
+            .onTapGesture {
                 if rectColor == .black {
                     rectColor = .cyan
                     textColor = .black
@@ -40,16 +41,29 @@ struct GettingStartedExerciseView: View {
                 //  Code to run after detecting the long press gesture
                 rectColor = Color.gray
                 textColor = Color.black
+                degree = 0.0
             }
             .rotationEffect(Angle.degrees(degree))
-            .gesture(
-                RotationGesture()
-                    .onChanged({ angle in
-                        degree = angle.degrees
-                    })
-            )
+            .scaleEffect(finalValue + tempValue)
         }
         .padding()
+        
+        .gesture(
+            MagnificationGesture()
+                .onChanged { amount in
+                    tempValue = amount - 1
+                }
+                .onEnded { amount in
+                    finalValue += tempValue
+                    tempValue = 0
+                }
+        )
+        .gesture(
+            RotationGesture()
+                .onChanged({ angle in
+                    degree = angle.degrees
+                })
+        )
     }
 }
 
