@@ -10,6 +10,7 @@ import SwiftUI
 struct GettingStartedExerciseView: View {
     @State var rectColor = Color.gray
     @State var textColor = Color.black
+    @State private var degree = 0.0
     
     var body: some View {
         VStack {
@@ -38,7 +39,15 @@ struct GettingStartedExerciseView: View {
             }) {
                 //  Code to run after detecting the long press gesture
                 rectColor = Color.gray
+                textColor = Color.black
             }
+            .rotationEffect(Angle.degrees(degree))
+            .gesture(
+                RotationGesture()
+                    .onChanged({ angle in
+                        degree = angle.degrees
+                    })
+            )
         }
         .padding()
     }
