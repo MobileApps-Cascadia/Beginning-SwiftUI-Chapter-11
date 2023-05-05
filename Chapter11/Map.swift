@@ -14,7 +14,28 @@ struct MapExerciseView: View {
     @State private var tempValue: CGFloat = 0
     @State private var finalValue: CGFloat = 1
     
-    @State private var mapPosition = CGPoint(x: 50, y: 50)
+    @State private var location: CGPoint = CGPoint(x: 50, y: 50)
+    @GestureState private var fingerLocation: CGPoint? = nil
+    @GestureState private var startLocation: CGPoint? = nil
+    
+    var simpleDrag: some Gesture {
+            DragGesture()
+                .onChanged { value in
+                    var newLocation = startLocation ?? location // 3
+                    newLocation.x += value.translation.width
+                    newLocation.y += value.translation.height
+                    self.location = newLocation
+                }.updating($startLocation) { (value, startLocation, transaction) in
+                    startLocation = startLocation ?? location // 2
+                }
+        }
+        
+        var fingerDrag: some Gesture {
+            DragGesture()
+                .updating($fingerLocation) { (value, fingerLocation, transaction) in
+                    fingerLocation = value.location
+                }
+        }
     
     @State private var degree = 0.0
     
@@ -33,17 +54,14 @@ struct MapExerciseView: View {
                                 tempValue = 0
                                 }
                         )
-                    .position(mapPosition)
-                    .simultaneousGesture(DragGesture()
-                        .onChanged({ value in
-                            mapPosition = value.location
-                        }))
+                    .position(location)
+                    .simultaneousGesture(simpleDrag.simultaneously(with: fingerDrag))
                     .rotationEffect(Angle.degrees(degree))
                 Image("compass")
                     .resizable()
                     .frame(width:100, height:100)
                     .rotationEffect(Angle.degrees(degree))
-                    .position(x:50, y:50)
+                    .position(x:300, y:50)
             }
             .simultaneousGesture(
                 RotationGesture()
