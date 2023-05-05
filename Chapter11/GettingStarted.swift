@@ -60,7 +60,7 @@ struct GettingStartedExerciseView: View {
                     tempValue = 0
                 }
         )
-        .gesture(
+        .simultaneousGesture(
             RotationGesture()
                 .onChanged({ angle in
                     degree = angle.degrees
